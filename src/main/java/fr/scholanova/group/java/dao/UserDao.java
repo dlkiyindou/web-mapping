@@ -24,8 +24,23 @@ public interface UserDao {
 	 */
 	public User read(Integer id);
 	
-	
+	/**
+	 * 
+	 * @param first
+	 * @return
+	 */
 	public Collection<User> findByFirstName(String first);
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Collection<User> get();
+
+	/**
+	 * 
+	 * @param lastName
+	 * @return
+	 */
+	public Collection<User> findByLastName(String lastName);
 }

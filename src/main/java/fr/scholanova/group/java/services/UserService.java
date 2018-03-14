@@ -23,6 +23,16 @@ public interface UserService {
 	 */
 	public Collection<User> getByFirstName(String firstName);
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public Collection<User> getAll();
+
+	/**
+	 * 
+	 * @param lastName
+	 * @return
+	 */
+	public Collection<User> getByLastName(String lastName);
 }

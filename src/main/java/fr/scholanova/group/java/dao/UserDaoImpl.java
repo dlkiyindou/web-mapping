@@ -41,8 +41,7 @@ public class UserDaoImpl implements UserDao {
 	 * {@inheritDoc}
 	 */
 	public Collection<User> findByFirstName(String first) {
-		return entityManager.createQuery("SELECT u FROM User u WHERE u.firstName = :firstName")
-				.setParameter("firstName", first).getResultList();
+		return findBy("firstName", first);
 	}
 
 	/**
@@ -50,6 +49,18 @@ public class UserDaoImpl implements UserDao {
 	 */
 	public Collection<User> get() {
 		return entityManager.createQuery("SELECT u FROM User u").getResultList();
+	}
+
+	/**
+	 * {@inheritDoc}}
+	 */
+	public Collection<User> findByLastName(String lastName) {
+		return findBy("lastName", lastName);
+	}
+	
+	private Collection<User> findBy(String param, String value) {
+		return entityManager.createQuery("SELECT u FROM User u WHERE u." + param + "= :" + param)
+				.setParameter(param, value).getResultList();
 	}
 
 }

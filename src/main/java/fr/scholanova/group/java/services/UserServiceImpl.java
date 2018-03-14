@@ -35,4 +35,10 @@ public class UserServiceImpl implements UserService {
 	public Collection<User> getAll() {
 		return userDao.get();
 	}
+
+	public Collection<User> getByLastName(String lastName) {
+		return userDao.findByLastName(lastName);
+	}
+	
+	
 }
